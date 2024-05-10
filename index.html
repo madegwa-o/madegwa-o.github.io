@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Madegwa - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.webp'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: rgba(196, 192, 192, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .connect-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .connect-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .connect-buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #0056b3;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project-tile {
+            width: calc(33.33% - 20px);
+            padding: 20px;
+            background-color: #61dafb;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .project-tile:hover {
+            transform: translateY(-5px);
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .about-section {
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .skills-list li {
+            margin: 10px;
+            text-align: center;
+            position: relative; /* Added */
+        }
+
+        .skills-list li img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .skills-list li .skill-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .skills-list li .description {
+            font-size: 14px;
+            line-height: 1.4;
+            display: none;
+            position: absolute; /* Added */
+            top: -20px; /* Added */
+            left: 50%; /* Added */
+            transform: translateX(-50%); /* Added */
+            background-color: rgba(0, 0, 0, 0.7); /* Added */
+            padding: 5px 10px; /* Added */
+            border-radius: 5px; /* Added */
+            color: #fff; /* Added */
+            z-index: 1; /* Added */
+            width: 200px; /* Added */
+        }
+
+        .skills-list li:hover .description {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <header>
+        <h1>Oscar Madegwa</h1>
+        <h3>DEV-OPS Engineer</h3>
+    </header>
+
+    <img src="oscar.jpeg" alt="Profile Picture" class="profile-img">
+
+    <div class="connect-buttons">
+        <h2>Connect With Me</h2>
+        <a href="https://github.com/Oscar317-ai" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/oscar-madegwa-528986289" target="_blank">LinkedIn</a>
+    </div>
+
+    <section class="about-section">
+        <h2>About Me</h2>
+        <p>Hello, I'm Oscar. I'm a DEV-OPS Engineer based in Nakuru City, Kenya. I am pursuing a Bachelors of Science in Computer Science from the University of Karatina. I'm passionate about creating high-quality, user-friendly software that solves real-world problems.</p>
+
+    </section>
+
+    <div class="tabs">
+        <div class="tab" onclick="showTab('about')">Skills</div>
+        <div class="tab" onclick="showTab('projects')">GitHub Projects</div>
+    </div>
+
+    <div id="about" class="content-section">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li class="skill">
+                <img src="spring.png" alt="Java icon">
+                <div class="description">Experienced in developing microservices and web applications using the Spring Boot framework.</div>
+                <div class="skill-title">Java Spring Boot</div>
+            </li>
+            <li class="skill">
+                <img src="docker.png" alt="Docker icon">
+                <div class="description">Skilled in containerization with Docker, ensuring seamless deployment and management of applications.</div>
+                <div class="skill-title">Docker</div>
+            </li>
+            <li class="skill">
+                <img src="kubernetes.png" alt="Kubernetes icon">
+                <div class="description">Knowledgeable in Kubernetes for container orchestration, enabling efficient deployment, scaling, and management of containerized applications.</div>
+                <div class="skill-title">Kubernetes</div>
+            </li>
+            <li class="skill">
+                <img src="mpesa.png" alt="M-Pesa icon">
+                <div class="description">M-Pesa Daraja API is a mobile payment platform provided by Safaricom that enables businesses to integrate M-Pesa payments into their applications.</div>
+                <div class="skill-title">M-Pesa Daraja API</div>
+            </li>
+            <li class="skill">
+                <img src="postman.png" alt="Postman icon">
+                <div class="description">Development and testing using Postman, ensuring the reliability and functionality of APIs.</div>
+                <div class="skill-title">Proficient in API</div>
+            </li>
+            <li class="skill">
+                <img src="cloud.jpeg" alt="Cloud icon">
+                <div class="description">Experienced in cloud computing platforms such as AWS, Azure, and Google Cloud, adept at building and deploying applications in cloud environments.</div>
+                <div class="skill-title">Cloud technologies</div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="projects" class="content-section" style="display: none;">
+        <h2>GitHub Projects</h2>
+        <div class="projects-container">
+            <a href="https://github.com/Oscar317-ai/SearchEngine_with_pagination_-_sorting" target="_blank" class="project-tile">Search Engine</a>
+            <a href="https://github.com/Oscar317-ai/RegisteringApp" target="_blank" class="project-tile">Registering App</a>
+            <a href="https://github.com/Oscar317-ai/jwt-test1" target="_blank" class="project-tile">Json Web Tokens</a>
+            <a href="https://github.com/Oscar317-ai/my-competence-level" target="_blank" class="project-tile">Login App</a>
+            <a href="https://github.com/Oscar317-ai/M-pesa_Demo_App" target="_blank" class="project-tile">M-pesa App</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Oscar Madegwa</p>
+    <p>Nakuru City, Kenya</p>
+</footer>
+
+<script>
+    function showTab(tabName) {
+        // Hide all content sections
+        var contentSections = document.getElementsByClassName("content-section");
+        for (var i = 0; i < contentSections.length; i++) {
+            contentSections[i].style.display = "none";
+        }
+        // Show the selected content section
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
+
+</body>
+</html>
